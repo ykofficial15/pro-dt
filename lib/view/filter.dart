@@ -11,9 +11,9 @@ class _FilterChipDemoState extends State<FilterChipDemo> {
   final NewsController controller = Get.put(NewsController());
 
   List<String> _filters = [
+    'national',
     'all',
     'sports',
-    'national',
     'business',
     'world',
     'politics',
@@ -25,7 +25,7 @@ class _FilterChipDemoState extends State<FilterChipDemo> {
     'automobile',
     'miscellaneous'
   ];
-  String _selectedFilter = 'all'; 
+  String _selectedFilter = 'national'; 
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class _FilterChipDemoState extends State<FilterChipDemo> {
                     _selectedFilter = filter;
                     controller.fetchNews(filter);
                   } else {
-                    _selectedFilter = 'all'; // Deselecting all filters
+                    _selectedFilter = 'national'; // Deselecting all filters
                   }
                 });
               },
