@@ -84,6 +84,7 @@ factory Datum.fromJson(Map<String, dynamic> json) {
 }
 
 enum Date {
+    // ignore: constant_identifier_names
     THURSDAY_02_MAY_2024
 }
 

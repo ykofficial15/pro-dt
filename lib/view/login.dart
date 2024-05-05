@@ -4,6 +4,8 @@ import 'package:prodt/controller/news_controller.dart';
 import 'home.dart';
 
 class Login extends StatefulWidget {
+  const Login({super.key});
+
   @override
   State<Login> createState() => _LoginState();
 }
@@ -31,8 +33,8 @@ final NewsController controller = Get.put(NewsController());
               right: 0,
               child: Container(
                 height: MediaQuery.of(context).size.height,
-                padding: EdgeInsets.all(20.0),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(20.0),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40.0),
@@ -45,10 +47,10 @@ final NewsController controller = Get.put(NewsController());
                     children: [
                       Center(
                         child: Container(
-                          margin: EdgeInsets.fromLTRB(15, 50, 15, 0),
-                          child: Column(
+                          margin: const EdgeInsets.fromLTRB(15, 50, 15, 0),
+                          child: const Column(
                             children: [
-                              const Text(
+                              Text(
                                 'Log in',
                                 style: TextStyle(
                                   color: Colors.black,
@@ -56,14 +58,14 @@ final NewsController controller = Get.put(NewsController());
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              const SizedBox(height: 10,),
-                              const Text(
+                              SizedBox(height: 10,),
+                              Text(
                                 'Stay updated',
                                 style: TextStyle(
                                   color: Colors.blue,
                                 ),
                               ),
-                              const Text(
+                              Text(
                                 'with daily incidents 24x7 by news pro',
                                 style: TextStyle(
                                   color: Colors.blue,
@@ -77,11 +79,11 @@ final NewsController controller = Get.put(NewsController());
                         height: 44.0,
                       ),
                       Container(
-                        margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                        margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                         child: Column(
                           children: [
                             TextFormField(
-                              style: TextStyle(color: Colors.black),
+                              style: const TextStyle(color: Colors.black),
                               cursorColor: Colors.black,
                               keyboardType: TextInputType.emailAddress,
                               decoration: const InputDecoration(
@@ -118,7 +120,7 @@ final NewsController controller = Get.put(NewsController());
                               height: 26.0,
                             ),
                             TextFormField(
-                              style: TextStyle(color: Colors.black),
+                              style: const TextStyle(color: Colors.black),
                               obscureText: true,
                               cursorColor: Colors.black,
                               keyboardType: TextInputType.text,
@@ -163,7 +165,7 @@ final NewsController controller = Get.put(NewsController());
                         height: 70.0,
                       ),
                       Container(
-                        margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                        margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                         width: double.infinity,
                         child: RawMaterialButton(
                           fillColor: Colors.blue,
@@ -207,7 +209,7 @@ final NewsController controller = Get.put(NewsController());
       form.save();
       if (semail == 'admin@gmail.com' && spassword == '123456') {
         controller.fetchNews('national');
-       Get.to(Home());
+       Get.offAll  (Home());
       } else {
       Get.snackbar('Error', 'Invalid credentials');
       }

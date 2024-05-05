@@ -5,17 +5,17 @@ import 'package:url_launcher/url_launcher.dart';
 
 class NewsOverview extends StatelessWidget {
   final Datum newses;
-  NewsOverview({required this.newses});
+  const NewsOverview({super.key, required this.newses});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('News Overview'),
+        title: const Text('News Overview'),
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -27,35 +27,35 @@ class NewsOverview extends StatelessWidget {
                   fit: BoxFit.cover,
                   imageUrl: newses.imageUrl,
                   placeholder: (context, url) =>
-                      Center(child: CircularProgressIndicator()),
+                      const Center(child: CircularProgressIndicator()),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
                 newses.title,
                 style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+                    const TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
               ),
               
                 Text(
                 newses.time,
                 style:
-                    TextStyle( color: Colors.grey),
+                    const TextStyle( color: Colors.grey),
               ),
               
-              Text('By: ${newses.author}', overflow:TextOverflow.ellipsis, maxLines: 2,style: TextStyle(color: Colors.grey),),
-              Divider(),
+              Text('By: ${newses.author}', overflow:TextOverflow.ellipsis, maxLines: 2,style: const TextStyle(color: Colors.grey),),
+              const Divider(),
               Text(
                 newses.content,
-                style: TextStyle(color: Colors.black),
+                style: const TextStyle(color: Colors.black),
               ),
                 Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children:[
-                Text('More info:', style:TextStyle(fontWeight:FontWeight.bold, )),
+                const Text('More info:', style:TextStyle(fontWeight:FontWeight.bold, )),
                    TextButton(
                   onPressed: () {
                   _launchUrl(newses.url);
@@ -69,15 +69,15 @@ class NewsOverview extends StatelessWidget {
               ]
              ),
               TextButton(
-                style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.blue)),
                   onPressed: () {
                   _launchUrl(newses.readMoreUrl);
                   },
-                  child: Text('Read more',
-                      style: const TextStyle(
+                  child: const Text('Read more',
+                      style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.normal))),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
            
